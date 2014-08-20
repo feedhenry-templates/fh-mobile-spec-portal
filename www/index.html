@@ -1,6 +1,6 @@
-<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>FeedHenry Mobile Spec Portal</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/main.css><body><!--[if lt IE 10]>
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>FeedHenry Mobile Spec Portal</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/main.css><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><div class=wrapper><div class="sidebar hidden-phone"><h2 class=head>Mobile Spec Portal</h2><div class=separator><div class=separator-inner></div></div><h3 class=section-head>Main</h3><ul class=sidebar-nav><li class=active><i class="fa fa-fw fa-table no-antialiasing"></i> <span>Results</span></li><li><i class="fa fa-fw fa-bar-chart-o no-antialiasing"></i> <span>Charts</span></li></ul><div class=separator><div class=separator-inner></div></div><h3 class=section-head>Help</h3><ul class=sidebar-nav><li><i class="fa fa-fw fa-question"></i> <span>Help</span></li><li><i class="fa fa-fw fa-info"></i> <span>About</span></li></ul></div><div class=spinner></div><div class=content><!-- Templates Injected Here --></div></div><script id=results-template type=text/html><div class="search-box">
+        <![endif]--><div class=wrapper><div class="sidebar hidden-phone"><h2 class=head>Mobile Spec Portal</h2><div class=separator><div class=separator-inner></div></div><h3 class=section-head>Main</h3><ul class=sidebar-nav><a href=#results><li><i class="fa fa-fw fa-table no-antialiasing"></i> <span>Results</span></li></a> <a href=#charts><li><i class="fa fa-fw fa-bar-chart-o no-antialiasing"></i> <span>Charts</span></li></a></ul><div class=separator><div class=separator-inner></div></div><h3 class=section-head>Help</h3><ul class=sidebar-nav><a href=#help><li><i class="fa fa-fw fa-question"></i> <span>Help</span></li></a> <a href=#about><li><i class="fa fa-fw fa-info"></i> <span>About</span></li></a></ul></div><div class=spinner></div><div class=content><!-- Templates Injected Here --></div></div><script id=results-template type=text/html><div class="search-box">
                 <i class="fa fa-search search-icon"></i>
                 <input class="search" type="text" placeholder="Search"/>
             </div>
@@ -12,4 +12,29 @@
                 <div class="table_container">
                     <table class="table table-striped table-bordered"></table>
                 </div>
+            </div></script><script id=charts-template type=text/html><div class="meta">
+                <h3 class="area-title">Collected Reports - Charts</h3>
+                <p>Below are some charts relating to collected reports</p>
+            </div>
+            <div class="charts clearfix">
+                <div class="chart col-md-4">
+                    <canvas id="os" width="200" height="200"></canvas>
+                    <h4>OS</h4>
+                </div>
+                <div class="chart col-md-4">
+                    <canvas id="cordova_version" width="200" height="200"></canvas>
+                    <h4>Cordova Version</h4>
+                </div>
+                <div class="chart col-md-4">
+                    <canvas id="model" width="200" height="200"></canvas>
+                    <h4>Model</h4>
+                </div>                
+                <div class="ios_os"></div>
+                <div class="ios_device"></div>
+            </div></script><script id=help-template type=text/html><div class="meta">
+                <h3 class="area-title">Help</h3>
+                <p>Help</p>
+            </div></script><script id=about-template type=text/html><div class="meta">
+                <h3 class="area-title">About</h3>
+                <p>About</p>
             </div></script><script src=scripts/vendor.js></script><script src=scripts/plugins.js></script><script src=scripts/datatables.js></script><script src=feedhenry.js></script><script src=scripts/main.js></script>
