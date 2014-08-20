@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 9001,
         open: true,
         livereload: 35729,
         // Change this to '0.0.0.0' to access the server from outside
@@ -164,21 +164,6 @@ module.exports = function(grunt) {
       app: {
         src: ['<%= config.app %>/index.html'],
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-      }
-    },
-
-    // Renames files for browser caching purposes
-    rev: {
-      dist: {
-        files: {
-          src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
-            '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
-            '<%= config.dist %>/*.{ico,png}'
-          ]
-        }
       }
     },
 
@@ -370,7 +355,6 @@ module.exports = function(grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
-    'rev',
     'usemin',
     'htmlmin'
   ]);
