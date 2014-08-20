@@ -5,15 +5,8 @@
     padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
     padding-left: 15px;
     padding-right: 15px;
@@ -57,7 +50,6 @@ body {
 /* Supporting marketing content */
 .marketing {
     min-height: 600px;
-    margin: 40px 0;
 }
 
 .marketing p + h4 {
@@ -70,4 +62,216 @@ body {
     margin-top:30%;
     width: 0px;
     height: 0px;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ecf2f6;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.sidebar {
+    width: 20%;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    background: #354052;
+    color: #a0abbf;
+}
+
+.content {
+    min-height: 500px;
+    width: 80%;
+    position: relative;
+    float: right;
+}
+
+.search-box .search {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    padding-left: 55px;
+}
+
+.search-box {
+    border-top: 1px solid #eeeff3;
+    border-bottom: 1px solid #eeeff3;
+    height: 40px;
+    color: #a2abb7;
+    font-size: 14px;
+    position: relative;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 25px;
+    top: 8px;
+    font-size: 20px;
+}
+
+.sidebar .section-head {
+    padding-left: 10px;
+    color: #65748d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar .separator {
+    border-top: 1px solid #293241;
+    border-bottom: 1px solid #3d495d;
+}
+
+.sidebar .separator-inner {
+    border-top: 1px solid #303a4a;
+    border-bottom: 1px solid #2b3544;
+}
+
+.table_container {
+    padding: 0 20px 20px 20px;
+}
+
+.sidebar .head {
+    font-size: 16px;
+    text-align: center;
+}
+
+.sidebar .sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .sidebar-nav li {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.sidebar .sidebar-nav li i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.no-antialiasing {
+    -webkit-font-smoothing: none;
+}
+
+.sidebar .sidebar-nav li.active {
+    color: #fff;
+    background: #2f3949;
+    border-left: 2px solid #15a4fa;
+}
+
+.sidebar .sidebar-nav li span {
+    padding-bottom: 1px;
+}
+
+.sidebar .sidebar-nav li:hover {
+    color: #fff;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #a0abbf;
+}
+
+.meta {
+    padding-left: 20px;
+}
+
+.meta .area-title {
+    color: #4e515e;
+}
+
+.meta p {
+    color: #596679;
+    font-size: 13px;
+}
+
+.table_container {
+    font-size :13px;
+}
+
+.table_container th {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 11px;
+    background-color: #6f7d95 !important;
+    border-color: #6f7d95 !important;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: rgba(78, 81, 94, 0.02);
+}
+
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus {
+    background-color: #354052;
+    border-color: #354052;
+}
+
+.pagination > * {
+    font-weight: bold;
+}
+
+.table-bordered {
+    border: 1px solid #E0E5E9;
+}
+
+.table-bordered > thead > tr > th, 
+.table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, 
+.table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, 
+.table-bordered > tfoot > tr > td {
+    border-color: #eef2f5;
+}
+
+.table-bordered > thead > tr > th, 
+.table-bordered > thead > tr > td {
+    border-bottom-width: 1px;
+}
+
+.results table {
+    background-color: #fff;
+}
+
+.chart {
+    text-align: center;
+}
+
+.pagination a {
+    color: #6f7d95;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #a2abb7;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #a2abb7;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #a2abb7;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #a2abb7;
 }
