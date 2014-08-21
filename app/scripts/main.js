@@ -47,6 +47,7 @@ function loadApp() {
         "about": "about",
         "help": "help",
         "results": "results",
+        "result/:reportId": "result",
         "charts": "charts",
         '*path': 'default'
       },
@@ -81,6 +82,17 @@ function loadApp() {
       results: function() {
         var view = new TestResultsView({
           collection: resultsCollection,
+          el: el
+        });
+        view.render();
+        Sidebar.makeActive('#results');
+      },
+
+      result: function(reportId){
+        var resultModel = resultsCollection.get(reportId);
+        console.log(resultModel);
+        var view = new ResultDetailView({
+          model: resultModel,
           el: el
         });
         view.render();

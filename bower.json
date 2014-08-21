@@ -8,7 +8,8 @@
     "spin.js": "~2.0.1",
     "moment": "~2.8.1",
     "font-awesome": "~4.1.0",
-    "chartjs": "v1.0.1-beta.2"
+    "chartjs": "v1.0.1-beta.2",
+    "handlebars": "~1.3.0"
   },
   "devDependencies": {}
 }

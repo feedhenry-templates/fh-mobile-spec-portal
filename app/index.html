@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <script id="results-template" type="text/html">
+        <script id="results-template" type="text/x-handlebars-template">
             <div class="search-box">
                 <i class="fa fa-search search-icon"></i>
                 <input class="search" type="text" placeholder="Search"/>
@@ -68,7 +68,44 @@
             </div>
         </script>
 
-        <script id="charts-template" type="text/html">
+        <script id="result-detail-template" type="text/x-handlebars-template">
+            <div class="meta page-header result-detail-header">
+              <h3 class="area-title">{{device.platform}} - {{device.version}} </h3>
+              <p> Cordova - v{{device.cordova}} / Device - {{device.model}} - {{device.uuid}} / Duration - {{duration}}s</p>
+            </div>
+            <div class="result-detail-container">
+                <div class="result-detail row">
+                  {{#each summary_data}}
+                    <div class="col-md-3 specs-counters {{this.type}}">
+                      <h4>{{this.title}}</h4>
+                      <div class="result-detail-summary {{type}}">
+                        <span class="number">{{this.content}}<span>
+                      </div>
+                    </div>
+                  {{/each}}
+                </div>
+                <div class="result-detail-timeline">
+                  <ul class="timeline">
+                    {{#each spec_suites}}
+                    <li class="timeline-inverted">
+                    <div class="timeline-badge {{#if this.passed}}success{{else}}danger{{/if}}"><i class="fa {{#if this.passed}}fa-check{{else}}fa-times{{/if}}"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">{{this.suite_name}}</h4>
+                          <p><small class="text-muted">Totoal Assertions : {{this.total_assertions}}</small></p>
+                        </div>
+                        <div class="timeline-body">
+
+                        </div>
+                      </div>
+                    </li>
+                    {{/each}}
+                  </ul>
+                </div>
+            </div>
+        </script>
+
+        <script id="charts-template" type="text/x-handlebars-template">
             <div class="meta">
                 <h3 class="area-title">Collected Reports - Charts</h3>
                 <p>Below are some charts relating to collected reports</p>
@@ -91,14 +128,14 @@
             </div>
         </script>
 
-        <script id="help-template" type="text/html">
+        <script id="help-template" type="text/x-handlebars-template">
             <div class="meta">
                 <h3 class="area-title">Help</h3>
                 <p>Help</p>
             </div>
         </script>
 
-        <script id="about-template" type="text/html">
+        <script id="about-template" type="text/x-handlebars-template">
             <div class="meta">
                 <h3 class="area-title">About</h3>
                 <p>About</p>
@@ -112,6 +149,7 @@
         <script src="bower_components/spin.js/jquery.spin.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->

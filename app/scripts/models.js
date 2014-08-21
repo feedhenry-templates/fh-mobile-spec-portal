@@ -1,5 +1,95 @@
 var TestResult = Backbone.Model.extend({
+  idAttribute: 'reporterId',
 
+  getCompleteInfo: function(){
+    var testInfo = this.get('testInfo');
+    var completeInfo = _.findWhere
+    (testInfo, {
+      stage: 'complete'
+    });
+    return completeInfo;
+  },
+
+  totalSpecs: function(){
+    var completeInfo = this.getCompleteInfo();
+    if(completeInfo){
+      return completeInfo.data.total_specs;
+    } else {
+      return 'N/A';
+    }
+  },
+
+  failedSpecs: function(){
+    var completeInfo = this.getCompleteInfo();
+    if(completeInfo){
+      return completeInfo.data.failed_specs;
+    } else {
+      return 'N/A';
+    }
+  },
+
+  passedSpecs: function(){
+    var completeInfo = this.getCompleteInfo();
+    if(completeInfo){
+      return completeInfo.data.passed_specs;
+    } else {
+      return 'N/A';
+    }
+  },
+
+  skippedSpecs: function(){
+    var completeInfo = this.getCompleteInfo();
+    if(completeInfo){
+      return completeInfo.data.skipped_specs;
+    } else {
+      return 'N/A';
+    }
+  },
+
+  specsSummary: function(){
+    if(this.getCompleteInfo()){
+      return this.failedSpecs() + '/' + this.totalSpecs();
+    } else {
+      return 'Not Completed';
+    }
+  },
+
+  totalTime: function(){
+    var testInfo = this.get('testInfo');
+    var start = testInfo[0].ts;
+    var end = testInfo[testInfo.length-1].ts;
+    var duration = end - start;
+    return duration;
+  },
+
+  specsData: function(type){
+    var testInfo = this.get('testInfo');
+    var suitesCompletes = _.filter(testInfo, function(data){
+      if(data.stage === 'suite_complete'){
+        if(typeof type === 'boolean'){
+          if(data.data.passed === type){
+            return true;
+          } else {
+            return false;
+          }
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    });
+    var ret = _.map(suitesCompletes, function(data, index){
+      return {
+        ts: data.ts,
+        suite_name: data.data.name,
+        passed: data.data.passed,
+        total_assertions: data.data.totalCount,
+        inverted: index%2 === 0
+      }
+    });
+    return ret;
+  }
 });
 
 var TestResults = Backbone.Collection.extend({
