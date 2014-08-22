@@ -278,6 +278,12 @@ module.exports = function(grunt) {
             'feedhenry.js',
             'fhconfig.json'
           ]
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/font-awesome',
+          src: ['fonts/*.*'],
+          dest: '<%= config.dist %>'
         }]
       },
       styles: {
