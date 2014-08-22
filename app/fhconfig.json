@@ -1,8 +1,8 @@
 {
-  "appid": "qP9L8YADWQXgVr5r-DjtGkh7",
-  "appkey": "c05dc3759a90c4ffd683057d380bb97cc50b7bf5",
-  "apptitle": "Mobile Spec Dashboard",
-  "connectiontag": "0.0.2",
-  "host": "https://ngui-demo.sandbox.feedhenry.com",
-  "projectid": "qP9L8iGXgl0RlLjyDcls1kRw"
+  "appid": "7adVHtwNlbEkh2_Qrjg1cP2k",
+  "appkey": "2a2fc3ebc7e9d653404271706c13ae971959cffe",
+  "apptitle": "Mobile Spec Portal",
+  "connectiontag": "0.0.58",
+  "host": "https://testing.beta.feedhenry.com",
+  "projectid": "7adVHwoFqlb6MnXhNil9tw3f"
 }

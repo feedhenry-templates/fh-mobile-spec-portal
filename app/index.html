@@ -58,8 +58,16 @@
                 <input class="search" type="text" placeholder="Search"/>
             </div>
             <div class="meta">
+                <div class="pull-left">
                 <h3 class="area-title">Collected Reports</h3>
                 <p>Below is a table of collected reports from Devices running our Mobile Spec suite</p>
+                </div>
+                
+
+                <div class="btn-group pull-right">
+                  <button class="btn btn-sm devices-view-btn">Devices View</button>
+                  <button class="btn btn-sm tests-view-btn">Tests View</button>
+                </div>
             </div>
             <div class="results clearfix">
                 <div class="table_container">
@@ -85,18 +93,54 @@
                   {{/each}}
                 </div>
                 <div class="result-detail-timeline">
-                  <ul class="timeline">
-                    {{#each spec_suites}}
-                    <li class="timeline-inverted">
-                    <div class="timeline-badge {{#if this.passed}}success{{else}}danger{{/if}}"><i class="fa {{#if this.passed}}fa-check{{else}}fa-times{{/if}}"></i></div>
-                      <div class="timeline-panel">
-                        <div class="timeline-heading">
-                          <h4 class="timeline-title">{{this.suite_name}}</h4>
-                          <p><small class="text-muted">Totoal Assertions : {{this.total_assertions}}</small></p>
-                        </div>
-                        <div class="timeline-body">
+                  
+                </div>
+            </div>
+        </script>
 
-                        </div>
+        <script id="spec-detail-template" type="text/x-handlebars-template">
+            <div class="meta page-header result-detail-header">
+              <h4 class="area-title"> {{specName}} </h4>
+            </div>
+            <div class="result-detail-container">
+                <div class="result-detail row">
+                  <div class="col-md-offset-4 col-md-4 specs-counters danger">
+                      <h4>Failed</h4>
+                      <div class="result-detail-summary danger">
+                        <span class="number">{{failureCount}}<span>
+                      </div>
+                    </div>
+                </div>
+                <div class="spec-detail-timeline">
+                  <ul class="timeline">
+                    {{#each devices}}
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge danger">
+                        <i class="fa fa-times"></i>
+                      </div>
+
+                      <div class="timeline-panel">
+                       
+                       <div class="timeline-heading">
+                        <h4 class="timeline-titile">
+                         <a href="#spec_{{@index}}" data-toggle="collapse">
+                          {{this.platform}} {{this.version}} / Cordova {{this.cordova}} / {{this.model}} / {{this.uuid}} 
+                         </a>
+                        </h4>
+                       </div>
+
+                       <div class="panel-collasp collapse in" id="spec_{{@index}}">
+                         <div class="timeline-body">
+                           {{#each tests}}
+                             <div class="panel panel-danger">
+                               <div class="panel-heading">
+                                 <a href="#result/{{this.reporterId}}"><i class="fa fa-times"></i> {{fromNow this.ts}} - {{this.result}} </a>
+                               </div>
+                             </div>
+                           {{/each}}
+                         </div>
+                       </div>
+
                       </div>
                     </li>
                     {{/each}}

@@ -201,6 +201,23 @@ html, body {
     font-size: 13px;
 }
 
+.meta .pull-right {
+  margin-top: 25px;
+  margin-right: 20px;
+}
+
+.meta .btn {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  color: #6f7d95;
+}
+
+.meta .btn.active {
+  background-color: #354052;
+  border-color: #354052;
+  color: #ffffff;
+}
+
 .table_container {
     font-size :13px;
 }
@@ -341,7 +358,7 @@ html, body {
         position: absolute;
         content: " ";
         width: 3px;
-        background-color: #eeeeee;
+        background-color: #CFCECE;
         left: 50%;
         margin-left: -1.5px;
     }
@@ -512,3 +529,21 @@ html, body {
             right: auto;
         }
 /* } */
+
+.list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.result-detail-timeline {
+  padding-top: 10px;
+}
+
+.timeline-body .panel {
+  background-color: transparent;
+}

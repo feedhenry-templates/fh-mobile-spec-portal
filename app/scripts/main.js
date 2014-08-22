@@ -46,8 +46,9 @@ function loadApp() {
       routes: {
         "about": "about",
         "help": "help",
-        "results": "results",
+        "results/:viewType": "results",
         "result/:reportId": "result",
+        "spec/:specId": "spec",
         "charts": "charts",
         '*path': 'default'
       },
@@ -79,12 +80,12 @@ function loadApp() {
         Sidebar.makeActive('#charts');
       },
 
-      results: function() {
+      results: function(viewType) {
         var view = new TestResultsView({
           collection: resultsCollection,
           el: el
         });
-        view.render();
+        view.render(viewType);
         Sidebar.makeActive('#results');
       },
 
@@ -99,8 +100,22 @@ function loadApp() {
         Sidebar.makeActive('#results');
       },
 
+      spec: function(specId){
+        var specDetail = _.findWhere(resultsCollection.failedSpecsDetails(), {id: parseInt(specId)});
+        console.log(specDetail);
+        var view = new SpecDetailView({
+          el: el
+        });
+        view.render(specDetail);
+        Sidebar.makeActive('#results');
+      },
+
+      resultsByTest: function(){
+        Sidebar.makeActive('#resultsByTest');
+      },
+
       default: function() {
-        this.navigate("results", {
+        this.navigate("results/devicesView", {
           trigger: true
         })
       }
