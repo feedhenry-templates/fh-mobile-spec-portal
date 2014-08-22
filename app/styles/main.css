@@ -190,6 +190,7 @@ html, body {
 
 .meta {
     padding-left: 20px;
+    margin-top: 20px;
 }
 
 .meta .area-title {
@@ -268,6 +269,23 @@ html, body {
 
 .results table {
     background-color: #fff;
+}
+
+.chart-container {
+  padding-left: 20px;
+}
+
+.chart-container .panel {
+  background-color: transparent;
+  border: 1px solid #E0E5E9;
+}
+
+.chart-container  .panel-heading {
+  background-color: #6f7d95;
+  color: #fff;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
 .chart {
@@ -540,7 +558,7 @@ html, body {
   background-color: #f2dede;
 }
 
-.result-detail-timeline {
+.result-detail-timeline, .spec-detail-timeline{
   padding-top: 10px;
 }
 

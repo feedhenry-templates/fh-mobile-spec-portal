@@ -265,6 +265,49 @@ var TestResults = Backbone.Collection.extend({
     return this._filterDeviceInfo('model');
   },
 
+  getPlatforms: function (){
+    var allplatforms = [];
+    this.each(function(model){
+      var pl = model.get('deviceInfo').platform.toLowerCase();
+      if(allplatforms.indexOf(pl) === -1){
+        allplatforms.push(pl);
+      }
+    });
+    return allplatforms;
+  },
+
+  failureData: function(platform){
+    var self = this;
+    var dataForPlatform = this.filter(function(model){
+      return model.get('deviceInfo').platform.toLowerCase() === platform.toLowerCase();
+    });
+
+    var color = self._colourForKey(platform);
+    var labels = [];
+    var datasets = [{
+      label: platform + ' Failed Sepcs',
+      fillColor: color,
+      strokeColor: color,
+      highlightFill: color,
+      highlightStroke: color,
+      data:[]
+    }];
+
+    if(dataForPlatform.length > 0){
+      
+      _.each(dataForPlatform, function(model){
+        var timelabel = moment(model.startTime()).format('MM-DD,H:mm');
+        labels.push(timelabel);
+        datasets[0].data.push(model.failedSpecs() === 'N/A'?0: model.failedSpecs());
+      });
+    }
+
+    return {
+      labels: labels,
+      datasets: datasets
+    }
+  },
+
   failedSpecsDetails: function(){
     var self = this;
     if(self.allFailedSpecs){

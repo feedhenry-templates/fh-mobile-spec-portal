@@ -293,36 +293,48 @@ var SpecDetailView = Backbone.View.extend({
 
 var TestChartsView = Backbone.View.extend({
   template: "#charts-template",
+  platforms: [],
 
   render: function() {
     var self = this;
-    var content = $(this.template).html();
-    $(this.el).html(content);
-
+    var html = $(this.template).html();
+    var template = Handlebars.compile(html);
+    self.platforms = self.collection.getPlatforms();
+    $(this.el).html(template({platforms: self.platforms}));
     this.renderOS();
     this.renderCordova();
     this.renderDevice();
+    _.each(self.platforms, function(pl){
+      self.renderFailure(pl);
+    });
   },
 
   renderOS: function() {
     var el = this.$el.find('#os');
     var data = this.collection.byOS();
     var ctx = el.get(0).getContext("2d");
-    var chart = new Chart(ctx).Doughnut(data, this.doughnutOptions);
+    var chart = new Chart(ctx).Doughnut(data);
   },
 
   renderCordova: function() {
     var el = this.$el.find('#cordova_version');
     var data = this.collection.byCordova();
     var ctx = el.get(0).getContext("2d");
-    var chart = new Chart(ctx).Doughnut(data, this.doughnutOptions);
+    var chart = new Chart(ctx).Doughnut(data);
   },
 
   renderDevice: function() {
     var el = this.$el.find('#model');
     var data = this.collection.byDevice();
     var ctx = el.get(0).getContext("2d");
-    var chart = new Chart(ctx).Doughnut(data, this.doughnutOptions);
+    var chart = new Chart(ctx).Doughnut(data);
+  },
+
+  renderFailure: function(pl){
+    var el = this.$el.find('#failures_' + pl);
+    var data = this.collection.failureData(pl);
+    var ctx = el.get(0).getContext('2d');
+    var chart = new Chart(ctx).Bar(data, {});
   }
 });
 

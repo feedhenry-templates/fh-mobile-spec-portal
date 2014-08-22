@@ -89,21 +89,42 @@
                 <h3 class="area-title">Collected Reports - Charts</h3>
                 <p>Below are some charts relating to collected reports</p>
             </div>
-            <div class="charts clearfix">
-                <div class="chart col-md-4">
-                    <canvas id="os" width="200" height="200"></canvas>
-                    <h4>OS</h4>
+            <div class="chart-container">
+              <div class="panel">
+                <div class="panel-heading">All Tests</div>
+                <div class="panel-body">
+                  <div class="charts clearfix">
+                    <div class="chart col-md-4">
+                        <canvas id="os" width="200" height="200"></canvas>
+                        <h4>OS</h4>
+                    </div>
+                    <div class="chart col-md-4">
+                        <canvas id="cordova_version" width="200" height="200"></canvas>
+                        <h4>Cordova Version</h4>
+                    </div>
+                    <div class="chart col-md-4">
+                        <canvas id="model" width="200" height="200"></canvas>
+                        <h4>Model</h4>
+                    </div>                
+                    <div class="ios_os"></div>
+                    <div class="ios_device"></div>
+                  </div>
                 </div>
-                <div class="chart col-md-4">
-                    <canvas id="cordova_version" width="200" height="200"></canvas>
-                    <h4>Cordova Version</h4>
-                </div>
-                <div class="chart col-md-4">
-                    <canvas id="model" width="200" height="200"></canvas>
-                    <h4>Model</h4>
-                </div>                
-                <div class="ios_os"></div>
-                <div class="ios_device"></div>
+              </div>
+              {{#each platforms}}
+              {{#if this}}
+                  <div class="panel">
+                    <div class="panel-heading">{{this}} Failures</div>
+                    <div class="panel-body">
+                      <div class="charts clearfix">
+                        <div class="chart row">
+                          <canvas id="failures_{{this}}" height="300" width="1000"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {{/if}}
+              {{/each}}
             </div></script><script id=help-template type=text/x-handlebars-template><div class="meta">
                 <h3 class="area-title">Help</h3>
                 <p>Help</p>
