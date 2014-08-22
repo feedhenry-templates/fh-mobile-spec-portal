@@ -1,8 +1,7 @@
 {
-  "appid": "7adVHtwNlbEkh2_Qrjg1cP2k",
-  "appkey": "2a2fc3ebc7e9d653404271706c13ae971959cffe",
-  "apptitle": "Mobile Spec Portal",
-  "connectiontag": "0.0.58",
-  "host": "https://testing.beta.feedhenry.com",
-  "projectid": "7adVHwoFqlb6MnXhNil9tw3f"
+  "appid": "5cdT24daO8PiYU9R2F2M8KGO",
+  "appkey": "62f1d8e4e574418bb54f38d6665bca33297d5e8a",
+  "connectiontag": "0.0.2",
+  "host": "https://testing-lon3.feedhenry.com",
+  "projectid": "5cdT2D93mYSX-nS0Syp08tHc"
 }
