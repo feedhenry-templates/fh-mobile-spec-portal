@@ -29,6 +29,7 @@ For development, install all the dependecies using
 
 ```javascript
 npm install .
+bower install .
 ```
 
 Then run
