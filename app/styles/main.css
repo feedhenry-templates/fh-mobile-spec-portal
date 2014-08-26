@@ -145,6 +145,10 @@ html, body {
     text-align: center;
 }
 
+.sidebar .logo {
+    margin-right: 5px;
+}
+
 .sidebar .sidebar-nav {
     list-style: none;
     padding: 0;
