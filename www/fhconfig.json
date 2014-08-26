@@ -1,7 +1,7 @@
 {
-  "appid": "qP9L8YADWQXgVr5r-DjtGkh7",
-  "appkey": "c05dc3759a90c4ffd683057d380bb97cc50b7bf5",
+  "appid": "5cdT24daO8PiYU9R2F2M8KGO",
+  "appkey": "62f1d8e4e574418bb54f38d6665bca33297d5e8a",
   "connectiontag": "0.0.2",
-  "host": "https://ngui-demo.sandbox.feedhenry.com",
-  "projectid": "qP9L8iGXgl0RlLjyDcls1kRw"
+  "host": "https://testing-lon3.feedhenry.com",
+  "projectid": "5cdT2D93mYSX-nS0Syp08tHc"
 }
