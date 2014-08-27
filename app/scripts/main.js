@@ -23,7 +23,7 @@ function showErrorPanel(text) {
 
 function loadApp() {
   $fh.cloud({
-    path: '/recordTest',
+    path: '/listTests',
     method: 'get',
     contentType: 'application/json'
   }, function(res) {
