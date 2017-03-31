@@ -5,9 +5,9 @@ The web portal allows you to view the automatic tests results of the [Mobile Spe
 
 ## Screenshots
 
-![](./screenshots/results.png)
-![](./screenshots/spec-results.png)
-![](./screenshots/charts.png)
+![](https://raw.githubusercontent.com/feedhenry-templates/fh-mobile-spec-portal/master/screenshots/results.png)
+![](https://raw.githubusercontent.com/feedhenry-templates/fh-mobile-spec-portal/master/screenshots/spec-results.png)
+![](https://raw.githubusercontent.com/feedhenry-templates/fh-mobile-spec-portal/master/screenshots/charts.png)
 
 ## Usage
 
@@ -23,7 +23,7 @@ Just build the [Mobile Spec App](https://github.com/feedhenry-templates/fh-mobil
 
 ### Development
 
-All the development work should be done in the [app directory](./app).
+All the development work should be done in the `app` directory.
 
 For development, install all the dependecies using 
 
@@ -38,7 +38,7 @@ Then run
 grunt serve
 ```
 
-This will open the [dev index](app/index.html) page in the browser. Everytime a file is changed in the 'app' directory, the page will be reloaded automatically.
+This will open the `app/index.html` page in the browser. Everytime a file is changed in the 'app' directory, the page will be reloaded automatically.
 
 ### Build
 
@@ -48,6 +48,6 @@ Then the development work is finished, run
 grunt build
 ```
 
-This will generate distribute version to the [www](./www) directory.
+This will generate distribute version to the `www` directory.
 
 
