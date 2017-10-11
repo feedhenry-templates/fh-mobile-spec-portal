@@ -1,0 +1,27 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - grunt-bower-install > wiredep > glob > minimatch:
+        patched: '2017-10-11T14:40:01.669Z'
+  'npm:negotiator:20160616':
+    - grunt-contrib-connect > connect > negotiator:
+        patched: '2017-10-11T14:40:01.669Z'
+  'npm:qs:20140806-1':
+    - grunt-contrib-watch > tiny-lr-fork > qs:
+        patched: '2017-10-11T14:40:01.669Z'
+  'npm:request:20160119':
+    - grunt-mocha > grunt-lib-phantomjs > phantomjs > request:
+        patched: '2017-10-11T14:40:01.669Z'
+  'npm:tar:20151103':
+    - grunt-contrib-imagemin > image-min > gifsicle > bin-build > download > decompress > tar:
+        patched: '2017-10-11T14:40:01.669Z'
+    - grunt-contrib-imagemin > image-min > jpegtran-bin > bin-build > download > decompress > tar:
+        patched: '2017-10-11T14:40:01.669Z'
+    - grunt-contrib-imagemin > image-min > optipng-bin > bin-build > download > decompress > tar:
+        patched: '2017-10-11T14:40:01.669Z'
+  'npm:tough-cookie:20170905':
+    - grunt-mocha > grunt-lib-phantomjs > phantomjs > request > tough-cookie:
+        patched: '2017-10-11T14:40:01.669Z'
